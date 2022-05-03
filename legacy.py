@@ -167,7 +167,7 @@ def convert_tf_generator(tf_G, custom=False, **ex_kwargs):
         z_dim                   = kwarg('latent_size',          1024),
         c_dim                   = kwarg('label_size',           0),
         w_dim                   = kwarg('dlatent_size',         1024),
-        img_resolution          = kwarg('resolution',           1024),
+        img_resolution          = kwarg('resolution',           256),
         img_channels            = kwarg('num_channels',         3),
         mapping_kwargs = dnnlib.EasyDict(
             num_layers          = kwarg('mapping_layers',       4),
@@ -277,7 +277,7 @@ def convert_tf_discriminator(tf_D):
     # Convert kwargs.
     kwargs = dnnlib.EasyDict(
         c_dim                   = kwarg('label_size',           0),
-        img_resolution          = kwarg('resolution',           1024),
+        img_resolution          = kwarg('resolution',           256),
         img_channels            = kwarg('num_channels',         3),
         architecture            = kwarg('architecture',         'resnet'),
         channel_base            = kwarg('fmap_base',            16384) * 2,
