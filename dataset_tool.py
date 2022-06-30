@@ -406,6 +406,9 @@ def convert_dataset(
         # Error check to require uniform image attributes across
         # the whole dataset.
         channels = img.shape[2] if img.ndim == 3 else 1
+        if channels is not 3:
+            continue
+
         cur_image_attrs = {
             'width': img.shape[1],
             'height': img.shape[0],
