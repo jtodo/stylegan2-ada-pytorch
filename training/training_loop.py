@@ -245,7 +245,7 @@ def training_loop(
         try:
             import torch.utils.tensorboard as tensorboard
             stats_tfevents = tensorboard.SummaryWriter(run_dir)
-        except ImportError as err:
+        except Exception as err:
             print('Skipping tfevents export:', err)
 
     # Train.
